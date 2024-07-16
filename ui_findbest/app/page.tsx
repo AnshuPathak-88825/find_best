@@ -3,6 +3,7 @@ import { UserNav } from "./component/user-nav";
 import { Search } from "./component/search";
 import { MainNav } from "./component/main-nav";
 import HomePageOverview from "./component/HomePageOverview";
+import Categories from "./component/Categories";
 export default function Home() {
   return (
     <div>
@@ -18,6 +19,11 @@ export default function Home() {
         <div>
           <HomePageOverview/>
 
+        </div>
+        <div>
+          <div>
+            <Categories/>
+          </div>
         </div>
     </div>
   );

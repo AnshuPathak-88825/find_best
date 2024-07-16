@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      fontFamily:{
+        montserrat: ['Montserrat', 'sans-serif','system-ui'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
