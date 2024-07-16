@@ -5,31 +5,26 @@ import Image from 'next/image'
 type Props = {}
 export interface Album {
     name: string
-    artist: string
     cover: string
 }
 export const All_Category: Album[] = [
     {
         name: "MEDICINE",
-        artist: "Ethan Byte",
         cover:
             "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=500",
     },
     {
         name: "Async Awakenings",
-        artist: "Nina Netcode",
         cover:
             "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?q=80&w=1422",
     },
     {
         name: "The Art of Reusability",
-        artist: "Lena Logic",
         cover:
             "https://plus.unsplash.com/premium_photo-1664391960037-8aefeab6482b?q=80&w=1526",
     },
     {
         name: "Stateful Symphony",
-        artist: "Beth Binary",
         cover:
             "https://images.unsplash.com/photo-1599202860130-f600f4948364?q=80&w=1376",
     },
