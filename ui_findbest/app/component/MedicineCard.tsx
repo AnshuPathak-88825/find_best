@@ -25,7 +25,7 @@ const MedicineCard = (props: Props) => {
     <div className="m-1  w-full ">
       <Card >
         <CardHeader>
-          <Link href={props.item.medicineURL}><Button variant="link"><CardTitle>{props.item.medicineName}</CardTitle></Button></Link>
+          <Link href={props.item.medicineURL} target="_blank"><Button variant="link"><CardTitle>{props.item.medicineName}</CardTitle></Button></Link>
 
 
         </CardHeader>
