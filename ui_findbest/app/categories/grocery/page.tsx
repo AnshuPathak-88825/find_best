@@ -4,17 +4,17 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Loader2 } from 'lucide-react'
 import axios from 'axios'
-import SmartPhone from '@/app/component/SmartPhone'
+import GroceryCard from '@/app/component/GroceryCard'
 
 type Dataitem = {
-    scrapFrom: string,
-    fullURL: string,
-    name: string,
-    image: string,
-    price: string,
-    SPEC_SCORE: string,
-    Status: string,
-    Ratings: string
+  groceryIMG:string,
+  scrapFrom:string,
+  groceryName:string,
+  groceryURL:string,
+  groceryQnty:string,
+  groceryMRP:string,
+  groceryNewPrice:string,
+  grocerySavedPrice:string,
 }
 
 type Props = {}
@@ -28,7 +28,7 @@ const Page = (props: Props) => {
             const API = process.env.NEXT_API;
             setLoading(true);
             const response = await axios.get(
-                `http://localhost:4000/api/smartphone/${SearchInput}`
+                `http://localhost:4000/api/grocery/${SearchInput}`
             );
             setResponse(response.data);
             setLoading(false);
@@ -39,7 +39,7 @@ const Page = (props: Props) => {
     return (
         <div>
             <div className='bg-transparent	backdrop-blur-md	sticky top-0 z-10	'>
-                <div className='text-center text-3xl font-bold m-5'>Smart Phone</div>
+                <div className='text-center text-3xl font-bold m-5'>Grocery</div>
                 <div className='flex flex-wrap	 justify-center m-8'>
                     <div>
                         <Input
@@ -67,7 +67,7 @@ const Page = (props: Props) => {
                         }
                         return singleResult.map((item: Dataitem, subIndex: number) => (
                             <div key={subIndex} className='w-full sm:w-1/2 md:w-1/3   transition-all hover:scale-105'>
-                                <SmartPhone item={item} />
+                                <GroceryCard item={item} />
                             </div>
                         ));
                     })}
