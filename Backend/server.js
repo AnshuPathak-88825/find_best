@@ -25,16 +25,13 @@ app.get("/api/medicine/:name", async (req, res) => {
   const { name } = req.params;
 
   try {
-    console.log("name : "+name);
     const searchResults = [];
 
     // const URL = `https://www.amazon.in/s?k=${name}&i=hpc&crid=1OSR6C5KJ804W&sprefix=aciloc%2Chpc%2C195&ref=nb_sb_noss_2`;
     // let result = await getmedicineAmazonDescription(URL);
-    // console.log(result);
 
     const pharmeasyurl = `https://pharmeasy.in/search/all?name=${name}`;
     let result2 = await getmedicinepharmaDescription(pharmeasyurl);
-    // console.log(result2);
     const Apollopharmaurl = `https://www.apollopharmacy.in/search-medicines/${name}`;
     let result3 = await getmedicineApollopharmaDescription(Apollopharmaurl);
 
@@ -42,7 +39,6 @@ app.get("/api/medicine/:name", async (req, res) => {
     searchResults.push(result2);
     searchResults.push(result3);
 
-    console.log(searchResults);
     res.json(searchResults);
   } catch (error) {
     console.error(error);
@@ -69,7 +65,6 @@ app.get("/api/clothing/:name", async (req, res) => {
     searchResults.push(ajioResult);
     searchResults.push(snapdealResult);
 
-    // console.log(searchResults);
     res.json(searchResults);
   } catch (error) {
     console.error(error);
@@ -81,7 +76,6 @@ app.get("/api/clothing/:name", async (req, res) => {
 app.get("/api/grocery/:name", async (req, res) => {
   const { name } = req.params;
 
-  // console.log(name);
 
   try {
    
@@ -124,7 +118,6 @@ app.get("/api/smartphone/:name", async (req, res) => {
     // searchResults.push(ajioResult);
     // searchResults.push(snapdealResult);
 
-    // console.log(searchResults);
     res.json(searchResults);
   } catch (error) {
     console.error(error);
