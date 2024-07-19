@@ -44,7 +44,7 @@ const Categories = (props: Props) => {
             </div>
             <Separator className="my-4" />
             
-            <div className='flex flex-wrap w-full '>
+            <div className='flex flex-wrap w-full justify-between'>
                 {All_Category.map((Category,index:number) => <div key={index} className=' w-[310px] rounded-lg m-1'>
                     <Image src={Category.cover} className='w-full aspect-[3/4] h-fit w-fit object-cover transition-all hover:scale-105' width={240} height={0} alt={Category.name} />
                 </div>)}
