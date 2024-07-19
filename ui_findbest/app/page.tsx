@@ -1,24 +1,38 @@
+"use client";
 import Image from "next/image";
 import { UserNav } from "./component/user-nav";
 import { Search } from "./component/search";
 import { MainNav } from "./component/main-nav";
 import HomePageOverview from "./component/HomePageOverview";
 import Categories from "./component/Categories";
+import { Full_NavBar, Mobile_NavBar } from "./component/NavBar";
+import { useEffect, useState } from "react";
 export default function Home() {
+  const [IsMobile, SetIsMohile] = useState<boolean>(false);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 700) {
+        console.log("hello");
+        SetIsMohile(true);
+      } else {
+        SetIsMohile(false);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [window.innerWidth]);
   return (
     <div>
-      {/* <div className="border-b sticky top-0">
-        <div className="flex  h-16 items-center px-4 bg-transparent	backdrop-blur-md	">
-          <MainNav className="mx-6" />
-          <div className="ml-auto flex items-center space-x-4">
-            <Search />
-            <UserNav />
-          </div>
-        </div>
-      </div> */}
+      {!IsMobile && <Full_NavBar />}
+      {IsMobile && <Mobile_NavBar />}
       <div>
         <HomePageOverview />
-
       </div>
       <div>
         <div>
